@@ -7,12 +7,12 @@
 
 void free_tokens(char **array_tokens)
 {
-    int index = 0;
+	int index = 0;
 
-    while (array_tokens[index] != NULL)
-    {
-        free(array_tokens[index]);
-        index++;
-    }
-    free(array_tokens);
+	while (array_tokens[index] != NULL)
+	{
+		free(array_tokens[index]);
+		index++;
+	}
+	free(array_tokens);
 }
