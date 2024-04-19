@@ -17,7 +17,7 @@ We created this Simple Shell as a class project to learn about operating systems
 * We have been working with the Visual Studio Code IDE to develop our project.
 
 ## Flowchart
-<img src="Capture t0.png" alt= "Activity Diagram">
+<img src="diagram.png" alt= "Activity Diagram">
 
 ## How to use the Simple Shell
 
@@ -89,13 +89,13 @@ The simple shell returns the exit status of the last command executed, unless a 
 
 We have also created a corresponding man page for the Simple shell providing detailed information about its usage and available format specifiers. To access the man page, run the following command in your terminal
 ### To execut  the man page 
-The command is : man  ./man_simple_shell
+The command is : 'man  ./man_simple_shell'
 
 ## Contributing
 We welcome contributions to improve the Simple Shell project! If you have suggestions for new features, improvements, or bug fixes, please open an issue to discuss your ideas before making any changes. This allows us to coordinate and discuss the changes effectively. We appreciate your interest and look forward to your contributions!
 
 ## Authors
-<a href="AUTHORS.md">File Authors<a>
+<a href="AUTHORS">File Authors<a>
 
 ## Licence
 Distributed under the MIT License. See <a href="https://www.holbertonschool.com/">Licence </a>for more informations.
