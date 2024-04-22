@@ -12,30 +12,27 @@ int execute_command(char *command, char **array_tokens)
 {
 	pid_t pid;
 	int status; /* Variable to store child process status */
+	char *command_path;
 
 	pid = fork();
 	if (pid == 0) /* Child process */
 	{
-		if (execve(command, array_tokens, NULL) == -1)
+		command_path = check_if_full_path(array_tokens);
+
+		if (execve(command_path, array_tokens, NULL) == -1)
 		{
-			perror("Error ");
-			free_tokens(array_tokens);
-			return (0);
+			exit(EXIT_FAILURE);
 		}
+		return (1);
 	}
 	else if (pid < 0)
 	{
 		perror("Fork failed ");
-		free_tokens(array_tokens);
 		exit(EXIT_FAILURE);
 	}
 	else /* Parent process */
 	{
 		waitpid(pid, &status, 0); /* Wait for child to finish */
-		if (status == EXIT_SUCCESS) /* Check if terminated normally */
-		{
-			free_tokens(array_tokens);/* Free tokens in the parent process*/
-		}
 		return (1);
 	}
 

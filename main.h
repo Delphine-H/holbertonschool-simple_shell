@@ -13,6 +13,6 @@ char **_get_token(char *buffer);
 void free_tokens(char **array_tokens);
 int execute_command(char *command, char **array_tokens);
 char *get_command_path(const char *command);
-int check_if_full_path(char **array_tokens);
+char *check_if_full_path(char **array_tokens);
 
 #endif

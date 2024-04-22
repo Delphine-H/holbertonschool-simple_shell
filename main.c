@@ -15,7 +15,7 @@ int main(void)
 	ssize_t bytes_read = 0; /* number of bytes read */
 	int should_continue = 1;
 	char **array_tokens;
-	/* char *command_path; */
+	char *command_path;
 
 	while (should_continue)
 	{
@@ -34,23 +34,10 @@ int main(void)
 				free_tokens(array_tokens);
 				continue;
 			}
-		/* command_path = get_command_path(array_tokens[0]);
-		if (command_path)
-		{
-			if (!execute_command(command_path, array_tokens))
-				printf("Command failed: %s\n", array_tokens[0]);
 
-			free(command_path);
-		}
-		else
-		{
-			printf("Command not found: %s\n", array_tokens[0]);
-		}
-		free_tokens(array_tokens); */
-		}
-
-		check_if_full_path(array_tokens);
+		execute_command(array_tokens[0], array_tokens);
 		free_tokens(array_tokens);
+		}
 	}
 	free(buffer);
 	return (0);
