@@ -15,8 +15,7 @@ int main(void)
 	ssize_t bytes_read = 0; /* number of bytes read */
 	int should_continue = 1;
 	char **array_tokens;
-	pid_t pid;
-	int status;
+	/* char *command_path; */
 
 	while (should_continue)
 	{
@@ -33,34 +32,26 @@ int main(void)
 			{
 				printf("No tokens found.\n");
 				free_tokens(array_tokens);
-				return (EXIT_FAILURE);
+				continue;
 			}
+		/* command_path = get_command_path(array_tokens[0]);
+		if (command_path)
+		{
+			if (!execute_command(command_path, array_tokens))
+				printf("Command failed: %s\n", array_tokens[0]);
 
-			pid = fork();
-			if (pid == 0) /* Child process */
-			{
-				if (execve(array_tokens[0], array_tokens, NULL) == -1)
-				{
-					perror("Error ");
-					exit(EXIT_FAILURE);
-				}
-			}
-			else if (pid < 0)
-			{
-				perror("Fork failed ");
-				free_tokens(array_tokens);
-				free(buffer);
-				exit(EXIT_FAILURE);
-			}
-			else /* Parent process */
-			{
-				waitpid(pid, &status, 0); /* Wait for child to finish */
-				free_tokens(array_tokens);
-			}
+			free(command_path);
 		}
+		else
+		{
+			printf("Command not found: %s\n", array_tokens[0]);
+		}
+		free_tokens(array_tokens); */
+		}
+
+		check_if_full_path(array_tokens);
+		free_tokens(array_tokens);
 	}
-
 	free(buffer);
-
 	return (0);
 }
