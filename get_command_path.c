@@ -9,17 +9,10 @@
 char *get_command_path(const char *command)
 {
 	char *path = getenv("PATH"); /* Get the PATH environment variable */
-	char *path_copy = strdup(path); /* Duplicate the PATH string */
 	char *token, *full_path;
 
-	if (!path_copy)
-	{
-		perror("strdup");
-		return (NULL);
-	}
-
 	/* Loop through each directory in PATH */
-	token = strtok(path_copy, ":");
+	token = strtok(path, ":");
 	while (token)
 	{
 		/* Construct full path */
@@ -27,7 +20,6 @@ char *get_command_path(const char *command)
 		if (!full_path)
 		{
 			perror("memory allocation fail");
-			free(path_copy);
 			return (NULL);
 		}
 		sprintf(full_path, "%s/%s", token, command);
@@ -35,7 +27,6 @@ char *get_command_path(const char *command)
 		/* Check if file exists and is executable */
 		if (access(full_path, X_OK) == 0)
 		{
-			free(path_copy);
 			return (full_path);
 		}
 
@@ -43,6 +34,5 @@ char *get_command_path(const char *command)
 		token = strtok(NULL, ":");
 	}
 
-	free(path_copy);
 	return (NULL); /* Command not found */
 }
