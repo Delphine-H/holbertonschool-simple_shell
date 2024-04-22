@@ -8,7 +8,7 @@
  * Return: 1 on success, 0 on failure
  */
 
-int execute_command(char *command, char **array_tokens)
+int execute_command(char **array_tokens)
 {
 	pid_t pid;
 	int status; /* Variable to store child process status */
