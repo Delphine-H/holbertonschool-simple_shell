@@ -19,7 +19,11 @@ int main(void)
 
 	while (should_continue)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+		}
+		
 		bytes_read = getline(&buffer, &buffer_size, stdin);
 		if (bytes_read == -1)
 		{
