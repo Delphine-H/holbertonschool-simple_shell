@@ -22,7 +22,7 @@ int main(void)
 		{
 			printf("$ ");
 		}
-		
+
 		bytes_read = getline(&buffer, &buffer_size, stdin);
 		if (bytes_read == -1)
 		{
