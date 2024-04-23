@@ -24,7 +24,7 @@ char *check_if_full_path(char **array_tokens)
 		}
 		else
 		{
-			printf("Command not found: %s\n", array_tokens[0]);
+			printf("No such file or directory\n");
 			exit(EXIT_FAILURE);
 		}
 	}
