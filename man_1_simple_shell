@@ -1,0 +1,48 @@
+.SH hsh
+
+.SH NAME
+hsh - simple shell program
+
+.SH SYNOPSIS
+.B hsh [command] [argument]
+for interactive mode and
+.B echo "[command] [argument]" | ./hsh
+for non-interactive mode.
+
+.SH DESCRIPTION
+hsh is a simple command-line interface used to interact with an operating system, allowing users to execute commands and run scripts.
+
+The shell supports executing commands with or without specifying their full paths.
+
+hsh uses the PATH environment variable to search for commands if the command is not a full path.
+
+.SH OPTIONS
+None.
+
+.SH EXIT STATUS
+The shell returns 0 on success and non-zero on failure.
+
+.SH AUTHORS
+Antrina Rich <antrinarich@gmail.com>  
+Hannon Delphine <hannon.delphine@gmail.com>  
+Saint Machin Louis <louis.saintmachin@gmail.com>
+
+.SH FILES
+main.h  
+Header file containing function prototypes and necessary includes.
+
+.SH SEE ALSO
+[main.h(3)](main.h), [_get_token(3)](main.h), [execute_command(3)](main.h), [get_command_path(3)](main.h), [check_if_full_path(3)](main.h), [free_tokens(3)](main.h)
+
+.SH BUGS
+No known bugs.
+
+.SH EXAMPLES
+To execute a command, type its name followed by any arguments and press Enter.
+
+
+.SH HISTORY
+Written by Antrina Rich, Hannon Delphine, and Saint Machin Louis.
+
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.
