@@ -27,6 +27,7 @@ int main(void)
 		if (bytes_read == -1)
 		{
 			should_continue = 0;
+			break;
 		}
 		else
 		{
