@@ -67,9 +67,25 @@ Then type the command :
             <td>free.c</td>
             <td>Source file containing functions for freeing allocated memory in the shell implementation.</td>
         </tr>
-         <tr>
+        <tr>
             <td>get_token.c</td>
             <td>Source file containing functions for tokenizing input commands in the shell implementation.</td>
+        </tr>
+        <tr>
+            <td>execute_command.c</td>
+            <td>Implements a function to execute a command provided by the user.</td>
+        </tr>
+        <tr>
+            <td>free.c</td>
+            <td>Implements functions to release allocated memory in the shell implementation.</td>
+        </tr>
+         <tr>
+            <td>check_if_full_path.c</td>
+            <td>Contains a function to validate command execution by checking if it's fully specified and executable.</td>
+        </tr>
+         <tr>
+            <td>get_command_path.c</td>
+            <td>Implements a function to retrieve the full path of a command by searching through directories listed in the system's PATH environment variable.</td>
         </tr>
         <tr>
             <td>README.md</td>
