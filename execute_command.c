@@ -14,17 +14,11 @@ int execute_command(char **array_tokens)
 	int status; /* Variable to store child process status */
 	char *command_path;
 
-	command_path = check_if_full_path(array_tokens);
-
-	if (command_path == NULL)
-	{
-		return (0);
-	}
-	else
-	{
 	pid = fork();
 	if (pid == 0) /* Child process */
 	{
+		command_path = check_if_full_path(array_tokens);
+
 		if (execve(command_path, array_tokens, NULL) == -1)
 		{
 			exit(EXIT_FAILURE);
@@ -39,9 +33,7 @@ int execute_command(char **array_tokens)
 	else /* Parent process */
 	{
 		waitpid(pid, &status, 0); /* Wait for child to finish */
-		free(command_path);
 		return (1);
-	}
 	}
 
 	return (0);
