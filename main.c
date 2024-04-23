@@ -34,7 +34,6 @@ int main(void)
 			array_tokens = _get_token(buffer);
 			if (array_tokens[0] == NULL)
 			{
-				printf("No tokens found.\n");
 				free_tokens(array_tokens);
 				continue;
 			}
