@@ -13,7 +13,7 @@ char *check_if_full_path(char **array_tokens)
 
 	if (access(array_tokens[0], X_OK) == 0)
 	{
-		return (array_tokens[0]);
+		return (strdup(array_tokens[0]));
 	}
 	else
 	{
@@ -25,7 +25,6 @@ char *check_if_full_path(char **array_tokens)
 		else
 		{
 			printf("No such file or directory\n");
-			exit(EXIT_FAILURE);
 		}
 	}
 
