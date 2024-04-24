@@ -38,6 +38,12 @@ int main(void)
 				continue;
 			}
 
+		if (strcmp(array_tokens[0], "exit") == 0)
+			exit_shell(buffer, array_tokens);
+
+		if (strcmp(array_tokens[0], "env") == 0)
+			print_env();
+
 		execute_command(array_tokens);
 		free_tokens(array_tokens);
 		}
