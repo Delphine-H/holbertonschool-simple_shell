@@ -79,6 +79,10 @@ Then type the command :
             <td>free.c</td>
             <td>Implements functions to release allocated memory in the shell implementation.</td>
         </tr>
+        <tr>
+            <td>builtin.c</td>
+            <td>Implements built-in shell commands like cd, exit, and env, providing integral functionality within the shell.</td>
+        </tr>
          <tr>
             <td>check_if_full_path.c</td>
             <td>Contains a function to validate command execution by checking if it's fully specified and executable.</td>
