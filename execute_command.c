@@ -2,7 +2,6 @@
 
 /**
  * execute_command - execute a command if it exists
- * @command: command to execute
  * @array_tokens: array of command and arguments
  *
  * Return: 1 on success, 0 on failure

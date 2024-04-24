@@ -14,8 +14,7 @@ void exit_shell(char *buffer, char **array_tokens)
 
 /**
  * print_env - function that print env
- * @buffer: pointer to the buffer to free memory
- * @array_tokens: pointer to array_tokens to free memory
+ *
 */
 void print_env(void)
 {
