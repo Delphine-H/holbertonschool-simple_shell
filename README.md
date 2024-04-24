@@ -118,4 +118,4 @@ We welcome contributions to improve the Simple Shell project! If you have sugges
 <a href="AUTHORS">File Authors<a>
 
 ## Licence
-Distributed under the MIT License. See <a href="https://www.holbertonschool.com/">Licence </a>for more informations.
+Distributed under the MIT License. See <a href="LICENSE">Licence </a>for more informations.
